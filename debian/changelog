@@ -1,0 +1,197 @@
+libwoodstox-java (1:6.2.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Removed the javadoc from the upstream tarball
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 16 Sep 2020 15:18:03 +0200
+
+libwoodstox-java (1:6.2.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Alexandre Rossi ]
+  * New upstream version 6.2.0
+  * Refresh patches
+  * Add new build dependency: maven shade plugin
+  * Ignore some maven plugins
+
+  [ tony mancill ]
+  * Update Standards-Version to 4.5.0
+  * Update to debhelper-compat (= 13)
+  * Set "Rules-Requires-Root: no" in debian/control'
+
+ -- tony mancill <tmancill@debian.org>  Tue, 05 May 2020 19:55:58 -0700
+
+libwoodstox-java (1:5.1.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Removed the build dependency on libstax-java
+  * Standards-Version updated to 4.2.1
+  * Simplified debian/rules
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 06 Sep 2018 17:23:02 +0200
+
+libwoodstox-java (1:5.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    + Update dependencies accordingly.
+  * Update Vcs-* after moving to salsa.
+  * Update to debhelper 11.
+  * Bump Standards-Version to 4.1.4.
+  * Create compatibility symbolic links for woodstox-core-lgpl.jar and
+    woodstox-core-asl.jar.
+
+ -- Giovanni Mascellani <gio@debian.org>  Sat, 23 Jun 2018 16:09:36 +0200
+
+libwoodstox-java (1:5.0.3-2) experimental; urgency=medium
+
+  * Install POM relocations for backward compatibility.
+  * Fix insufficient dependency.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Nov 2017 16:10:16 +0100
+
+libwoodstox-java (1:5.0.3-1) experimental; urgency=medium
+
+  * Move the package to git.
+    + Update Vcs-* fields accordingly.
+  * Update project homepage and debian/watch URL.
+  * New upstream release.
+    + The distinction between -lgpl and -asl artifacts has vanished (closes:
+      #786550).
+  * Remove traces of tarball sanitizer, which is not required anymore.
+  * Switch build system to dh 10.
+  * Update debian/copyright.
+  * Bump Standards-Version to 4.1.1 (no changes required).
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Nov 2017 14:52:36 +0100
+
+libwoodstox-java (1:4.1.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.3 (no changes required).
+  * Update debian/copyright to the standardized machine-readable format.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 22 Jun 2012 15:42:35 +0200
+
+libwoodstox-java (1:4.1.2-2) unstable; urgency=low
+
+  * Fix wrong dependency against stax-api in POM.
+
+ -- Giovanni Mascellani <gio@debian.org>  Sat, 14 Jan 2012 11:54:20 +0100
+
+libwoodstox-java (1:4.1.2-1) unstable; urgency=low
+
+  * New upstream release (closes: #580759).
+  * Add myself as uploader and remove Vincent, who is not interested
+    anymore in maintaining the package.
+
+ -- Giovanni Mascellani <gio@debian.org>  Wed, 11 Jan 2012 15:25:07 +0100
+
+libwoodstox-java (1:3.9.2.dfsg-4) unstable; urgency=low
+
+  * Upload to unstable
+  * Already conforms to standards 3.9.2
+  * Drop depencency on JRE + fix short description
+
+ -- Vincent Fourmond <fourmond@debian.org>  Mon, 06 Jun 2011 19:51:40 +0200
+
+libwoodstox-java (1:3.9.2.dfsg-3) experimental; urgency=low
+
+  * Team upload.
+  * Install POM files (closes: #611590).
+
+ -- Giovanni Mascellani <gio@debian.org>  Sat, 05 Feb 2011 14:25:30 +0100
+
+libwoodstox-java (1:3.9.2.dfsg-2) unstable; urgency=low
+
+  * Team upload
+
+  [ Vincent Fourmond ]
+  * Daniel Leidert updated debian/watch, thanks !
+  * Updated again debian/watch to point to the new download page
+
+  [ Torsten Werner ]
+  * Merge changes from Ubuntu.
+  * Switch to source format 3.0.
+  * Add get-orig-source target to debian/rules.
+  * Add debian/orig-tar.sh to clean up orig tarball from prebuilt jar files.
+  * Update Standards-Version: 3.8.4.
+
+ -- Torsten Werner <twerner@debian.org>  Sat, 08 May 2010 12:45:52 +0200
+
+libwoodstox-java (1:3.9.2.dfsg-1ubuntu3) lucid; urgency=low
+
+  * Enable test suite
+    * debian/patches/20-testsuite-enable.dpatch: use system junit libs, stop
+      on test failure, disable tests relying on non-packages external libs
+    * debian/control: build-depend on junit
+    * debian/rules: Enable test suite, add junit and ant-trax to classpath
+  * debian/control: add misc:Depends to dependencies
+  * debian/rules: Use default-jdk in all cases
+
+ -- Thierry Carrez <thierry.carrez@ubuntu.com>  Fri, 18 Dec 2009 16:37:00 +0100
+
+libwoodstox-java (1:3.9.2.dfsg-1ubuntu2) lucid; urgency=low
+
+  * debian/control: Cleanups to align with Java policy (set section to java,
+    only use default-jdk, drop java-virtual-machine)
+
+ -- Thierry Carrez <thierry.carrez@ubuntu.com>  Wed, 16 Dec 2009 16:24:15 +0100
+
+libwoodstox-java (1:3.9.2.dfsg-1ubuntu1) intrepid; urgency=low
+
+  * remove java specific dependencies and icedtea-java7-jre NBS (LP: #203636)
+
+ -- Didier Roche <didrocks@ubuntu-fr.org>  Sat, 30 Aug 2008 10:36:00 +0200
+
+libwoodstox-java (1:3.9.2.dfsg-1) unstable; urgency=low
+
+  * Now using ant.mk for the build
+  * Can now build and run using openjdk
+  * Moving to main !
+  * Pseudo new upstream release for the transition to main
+    - updated debian/watch to skip the .dfsg bit in the version number
+
+ -- Vincent Fourmond <fourmond@debian.org>  Sun, 20 Jul 2008 15:38:48 +0200
+
+libwoodstox-java (1:3.9.2-1) unstable; urgency=low
+
+  * New upstream version
+  * Not installing anymore empty directories (now lintian-clean)
+
+ -- Vincent Fourmond <fourmond@debian.org>  Wed, 28 May 2008 23:14:26 +0200
+
+libwoodstox-java (1:3.9.1-1) unstable; urgency=low
+
+  [ Vincent Fourmond ]
+  * Switch to a team-maintained package
+  * Bump standards to 3.7.3, no changes needed
+  * Added VCS control fields
+  * Removed fastjar from Build-deps, not needed (thanks to Michael Koch)
+
+  [ Michael Koch ]
+  * Updated watch file.
+
+  [ Vincent Fourmond ]
+  * New upstream version
+  * Refreshed 10-disable-unused
+
+ -- Vincent Fourmond <fourmond@debian.org>  Sat, 03 May 2008 20:59:51 +0200
+
+libwoodstox-java (4.0~svn20070930-2) unstable; urgency=low
+
+  * Added a watchfile and a Homepage control field
+  * Adapted depends and bulid-depends for the (distant) future switch to
+    icedtea in Debian -- and for Ubuntu now.
+  * Dropped (build-)deps on java5, as it does not build anyway.
+
+ -- Vincent Fourmond <fourmond@debian.org>  Thu, 29 Nov 2007 20:39:32 +0100
+
+libwoodstox-java (4.0~svn20070930-1) unstable; urgency=low
+
+  * Initial release (funnily enough, the ITP hasn't been taken into account
+    by the BTS...)
+
+ -- Vincent Fourmond <fourmond@debian.org>  Sun, 30 Sep 2007 23:28:12 +0200
+

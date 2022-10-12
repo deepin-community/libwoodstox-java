@@ -1,0 +1,124 @@
+Project: woodstox
+
+------------------------------------------------------------------------
+=== Releases ===
+------------------------------------------------------------------------
+
+6.2.1 (14-May-2020)
+
+#107: Sub-optimal exception with `WstxOutputProperties.P_OUTPUT_VALIDATE_NAMES`
+#108: Repairing `XMLStreamWriter` tries to bind `xml` namespace URI
+- Update stax2-api dependency to 4.2.1
+
+6.2.0 (25-Apr-2020)
+
+#103: Issue caused by MSV shading
+ (fix contributed by Daniel K)
+#104: `NullPointerException` in `DTDValidator.validateElementEnd()`
+  for element undefined in DTD
+ (reported by ChrisTrenkamp@github)
+#105: W3CSchemaFactory constructor incorrectly references relaxng
+ (reported by Colm H)
+
+6.1.1 (28-Feb-2020)
+
+- Fix for #96 (see below) had an issue leading to non-functioning
+  RelaxNG, W3C Schema validation
+
+6.1.0 (27-Feb-2020)
+
+#96: woodstox-core.jar 6.0.2 uses JDK-11 removed internal APIs
+ (reported by rohitgaikwad09@github, fix contributed by Konrad W)
+
+6.0.3 (07-Dec-2019)
+
+#88: Missing closing quote for attribute values during in Validating output mode
+ (reported, fixed by michaelsiegel@github)
+#93: Stax2 `maxAttributeSize` limit is only vaguely respected
+ (reported by Ivo S)
+#97: `copyEventFromReader()` `ArrayIndexOutOfBoundsException`
+ (reported by Daniel L)
+
+6.0.2 (12-Oct-2019)
+
+#85: OSGi dependency on relaxng should be `optional`
+ (reported by Colm H)
+
+6.0.1 (14-Sep-2019)
+
+#82: Recycled buffers in XMLStreamWriter are colliding between multiple writer
+  instances when used in an Akka stream
+ (reported by Jamie P)
+
+6.0.0 (29-Aug-2019)
+
+#78: Shade MSV dependency
+- Add `module-info.class` for Java 9+ module system
+
+5.3.1 (not yet released)
+
+#104: `NullPointerException` in `DTDValidator.validateElementEnd()`
+  for element undefined in DTD
+ (reported by ChrisTrenkamp@github)
+#105: W3CSchemaFactory constructor incorrectly references relaxng
+
+5.3.0 (15-Jul-2019)
+
+#58: Reading comment comments after Root Element closed sometimes throws `NullPointerException`
+#61: Add support for `XMLConstants.FEATURE_SECURE_PROCESSING` via SAX/Stax factories
+
+5.2.1 (14-May-2019)
+
+#74: Infinite loop in BijectiveNsMap#addGeneratedMapping when ctxt.getNamespaceURI(prefix)
+   returns an empty String
+ (reported by Ioan M)
+
+5.2.0 (02-Nov-2018)
+
+#42: Multi-document mode produces events only for first document
+ (reported by display-none@github)
+#46: NoSuchMethodError after update to Woodstox 5.1.0
+ (reported by Alexander V, veita@github)
+#47: Validation error due to white-space being handled as CData by `BaseStreamWriter`
+ (reported by Alexis H)
+#53: `XMLStreamReader.getAttributeValue(null, localName)` does not ignore namespace URI
+ (reported by flappingeagle@github)
+#56: Add `WstxInputProperties.P_ALLOW_XML11_ESCAPED_CHARS_IN_XML10` to allow XML 1.1 escaped
+ characters in XML 1.0 content
+  (suggested by Mickaël G, mguessan@github)
+
+5.1.0 (31-Mar-2018)
+
+#23: Text content is not validated correctly when copying events to `XmlStreamWriter`
+ (reported by hxc9@github)
+#43: `CompactStartElement` appears to incorrectly classify attributes as default
+ (reported by Jonathan T)
+- Add `Automatic-Module-Name` indicator in jar metadata, for Java 9
+- Upgrade `stax2-api` dependency to 4.1 (from 3.1)
+
+5.0.3 (23-Aug-2016)
+
+#13: `BasicStreamReader.getElementText()` behavior doesn't match Java documentation
+ (reported by Caleb-An@github)
+#15: `BasicStreamReader` should use `WstxUnexpectedCharException` instead of WstxParsingException
+ (reported by dima-kapustin@github)
+#16: Incorrect validation error(s) only using Stax2 writer
+ (reported by hxc9@github)
+#21: 500 characters limit when calling XMLStreamReader#getText() after CDATA event
+ (reported by elrodro83@github)
+
+5.0.2 (10-Dec-2015)
+
+#10: Stax 4.0.0 is not compatible with Woodstox 5.0.1
+ (reported by naveengopi@github)
+
+5.0.1 (02-Apr-2015)
+
+#3: Initial 5.0.0 release did not contain class files (d'oh!)
+ (reported by norrisjeremy@github)
+#4: Fix validation of text for an XMLStreamWriter
+ (reported by Wilco G, wgreven-ibr@github)
+
+5.0.0 (earlier)
+
+Attempted initial release -- unfortunately, as per #3 (see above), not a working jar.

@@ -1,0 +1,43 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Woodstox
+Upstream-Contact: Tatu Saloranta <tsaloranta@gmail.com>
+Source: https://github.com/FasterXML/woodstox
+Files-Excluded: docs/javadoc/*
+
+Files: *
+Copyright: © 2004-2018, Tatu Saloranta <tsaloranta@gmail.com>
+           © 2010-2018, FasterXML.com
+License: Apache-2.0
+ On Debian systems, a copy of the Apache license version 2.0 is
+ available in '/usr/share/common-licenses/Apache-2.0'.
+Comment: While not stated explicitly in the sources contained in this
+ package, the licensing information is reported in the upstream wiki
+ page at https://github.com/FasterXML/woodstox/wiki.
+
+Files: src/test/java/org/codehaus/stax/test/stream/TestProcInstrRead.java
+Copyright: © 2003, Richard Tobin
+License: free
+ May be freely redistributed provided copyright notice is retained.
+
+Files: debian/*
+Copyright: © 2007, Vincent Fourmond <fourmond@debian.org>
+           © 2011-2018, Giovanni Mascellani <gio@debian.org>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On Debian systems, a copy of the GNU General Public License version 2
+ is available in '/usr/share/common-licenses/GPL-2'.
+Comment: This packaging is based on that of libwoodstox-java, by
+ Vincent Fourmond.

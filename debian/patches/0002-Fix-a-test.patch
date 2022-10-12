@@ -1,0 +1,26 @@
+From: Giovanni Mascellani <gio@debian.org>
+Date: Sat, 10 Sep 2016 18:37:27 +0200
+Subject: Fix a test.
+
+A woodstox test depends on an error string being returned in English,
+so is broken when a different locale is set.
+
+This patch tests the exception class name instead of its message,
+which does not depend on the locale.
+---
+ src/test/java/wstxtest/sax/TestEntityResolver.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Index: libwoodstox-java.6/src/test/java/wstxtest/sax/TestEntityResolver.java
+===================================================================
+--- libwoodstox-java.6.orig/src/test/java/wstxtest/sax/TestEntityResolver.java	2020-05-04 17:08:08.522865155 +0200
++++ libwoodstox-java.6/src/test/java/wstxtest/sax/TestEntityResolver.java	2020-05-04 17:08:08.522865155 +0200
+@@ -44,7 +44,7 @@
+             assertNotNull(cause);
+             assertTrue(cause instanceof WstxException);
+             // [woodstox-core#84]: actual message varies by OS so only verify this:
+-            verifyException(e, " file ");
++            verifyException(e, "java.io.FileNotFoundException");
+             verifyException(e, "no-such-thing.dtd");
+         }
+ 

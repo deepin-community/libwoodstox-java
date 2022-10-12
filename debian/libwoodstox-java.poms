@@ -1,0 +1,1 @@
+pom.xml --no-parent --relocate=org.codehaus.woodstox:woodstox-core-lgpl,org.codehaus.woodstox:woodstox-core-asl

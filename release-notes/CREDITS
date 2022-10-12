@@ -1,0 +1,50 @@
+Here are people who have contributed to the development of Woodstox XML processor
+databind core component, version 5.x (earlier contributors included with 4.x
+codebase)
+
+Tatu Saloranta, tatu.saloranta@iki.fi: author
+
+Ioan Marcu (ioanmarcu@github)
+
+* Reported #74, suggested fix: Infinite loop in BijectiveNsMap#addGeneratedMapping
+  when ctxt.getNamespaceURI(prefix) returns an empty String
+ (5.2.1)
+
+Jamie Phelps (jphelp32@github)
+
+* Reported #82: Recycled buffers in XMLStreamWriter are colliding between multiple writer
+ (6.0.1)
+
+Colm O hEigeartaigh (coheigea@github)
+
+* Reported #85: OSGi dependency on relaxng should be `optional`
+ (6.0.2)
+* Reported #105, contributed fix: W3CSchemaFactory constructor incorrectly references
+  relaxng
+ (6.1.2)
+
+Michael Siegel (michaelsiegel@github)
+
+* Reported, contributed fix for #88: Missing closing quote for attribute values during
+  Validating output mode
+ (6.0.3)
+
+Ivo Studensky (istudens@github)
+
+* Reported #93: Stax `maxAttributeSize` limit is only vaguely respected
+ (6.0.3)
+
+Daniel Lowe (dan2097@github)
+
+* Reported #97: `copyEventFromReader()` `ArrayIndexOutOfBoundsException`
+ (6.0.3)
+
+Konrad Windszus (kwin@github)
+
+* Contributed fix for #96: woodstox-core.jar 6.0.2 uses JDK-11 removed internal APIs
+ (6.1.0)
+
+Daniel Kulp (dkulp@github)
+
+* Contributed fix for #103: Issue caused by MSV shading
+ (6.2.0)

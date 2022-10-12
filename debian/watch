@@ -1,0 +1,2 @@
+version=3
+https://github.com/FasterXML/woodstox/releases .*/woodstox-core-(\d\S*)\.tar\.gz

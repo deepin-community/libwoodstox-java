@@ -1,0 +1,2 @@
+org.sonatype.plugins nexus-staging-maven-plugin * * * *
+org.moditect moditect-maven-plugin * * * *

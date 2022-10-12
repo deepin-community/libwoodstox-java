@@ -1,0 +1,45 @@
+From: Giovanni Mascellani <gio@debian.org>
+Date: Sat, 10 Sep 2016 17:58:31 +0200
+Subject: Fix interface mismatch between woodstox and osgi.
+
+In registerService() recent osgi versions expect properties to be
+passed as a Dictionary<String, ?> object , while woodstox tries to
+pass a Properties object, which implements Dictionary<Object,
+Object> (which actually contains elements of type <String, Object>).
+
+In this patch the Java type checker is forced to accept this code
+by converting the object to an intermediate Hashtable type, without
+specifying generic types.
+---
+ src/main/java/com/ctc/wstx/osgi/WstxBundleActivator.java | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/src/main/java/com/ctc/wstx/osgi/WstxBundleActivator.java b/src/main/java/com/ctc/wstx/osgi/WstxBundleActivator.java
+index 0ad8402..37d9cb9 100644
+--- a/src/main/java/com/ctc/wstx/osgi/WstxBundleActivator.java
++++ b/src/main/java/com/ctc/wstx/osgi/WstxBundleActivator.java
+@@ -1,5 +1,7 @@
+ package com.ctc.wstx.osgi;
+ 
++import java.util.Hashtable;
++
+ import org.osgi.framework.BundleActivator;
+ import org.osgi.framework.BundleContext;
+ 
+@@ -27,13 +29,13 @@ public class WstxBundleActivator
+     public void start(BundleContext ctxt)
+     {
+         InputFactoryProviderImpl inputP = new InputFactoryProviderImpl();
+-        ctxt.registerService(Stax2InputFactoryProvider.class.getName(), inputP, inputP.getProperties());
++        ctxt.registerService(Stax2InputFactoryProvider.class.getName(), inputP, new Hashtable(inputP.getProperties()));
+         OutputFactoryProviderImpl outputP = new OutputFactoryProviderImpl();
+-        ctxt.registerService(Stax2OutputFactoryProvider.class.getName(), outputP, outputP.getProperties());
++        ctxt.registerService(Stax2OutputFactoryProvider.class.getName(), outputP, new Hashtable(outputP.getProperties()));
+         ValidationSchemaFactoryProviderImpl[] impls = ValidationSchemaFactoryProviderImpl.createAll();
+         for (int i = 0, len = impls.length; i < len; ++i) {
+             ValidationSchemaFactoryProviderImpl impl = impls[i];
+-            ctxt.registerService(Stax2ValidationSchemaFactoryProvider.class.getName(), impl, impl.getProperties());
++            ctxt.registerService(Stax2ValidationSchemaFactoryProvider.class.getName(), impl, new Hashtable(impl.getProperties()));
+         }
+     }
+ 
